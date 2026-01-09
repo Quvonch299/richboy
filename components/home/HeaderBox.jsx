@@ -32,9 +32,7 @@ export default function HeaderBox() {
   const current = countries[selectedCountry]
 
   return (
-    <div className="relative overflow-hidden">
-
- 
+    <div className="relative overflow-hidden min-h-screen">
       <AnimatePresence mode="wait">
         <motion.div
           key={current.bg}
@@ -52,7 +50,6 @@ export default function HeaderBox() {
         setSelectedCountry={setSelectedCountry}
       />
 
-   
       <div className="absolute inset-0 z-0">
         <Image
           src="/headerdark.png"
@@ -63,7 +60,7 @@ export default function HeaderBox() {
         />
       </div>
 
-      <div className="relative z-10 text-white flex flex-col items-center justify-center pt-[311px] pb-[211px]">
+      <div className="relative z-10 flex flex-col items-center justify-center pt-[10rem] pb-[10rem] px-4 md:px-8">
         <AnimatePresence mode="wait">
           <motion.div
             key={current.title}
@@ -71,12 +68,12 @@ export default function HeaderBox() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -40 }}
             transition={{ duration: 0.6 }}
-            className="text-center"
+            className="text-center text-[#FFFF]"
           >
-            <h2 className="font-medium text-[120px] leading-[90px]">
+            <h2 className="font-medium text-[60px] md:text-[120px] leading-[60px] md:leading-[90px]">
               {current.title}
             </h2>
-            <p className="text-[32px] leading-[90px]">
+            <p className="text-[20px] md:text-[32px] leading-[32px] md:leading-[90px] mt-4">
               {current.subtitle}
             </p>
           </motion.div>
